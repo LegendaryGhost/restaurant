@@ -183,7 +183,50 @@
           <div class="row g-0">
 
               <div class="col-lg-8 d-flex align-items-center mx-auto">
-                  <!-- TODO : Table of Statistics -->
+                  <div class="row g-3 align-items-center">
+                      <div class="col-auto">
+                          <label for="year" class="col-form-label">Année : </label>
+                      </div>
+                      <div class="col-auto">
+                          <select id="year" name="year" class="form-select"></select>
+                      </div>
+                  </div>
+                  <div class="row g-3 align-items-center ps-4">
+                      <div class="col-auto">
+                          <label for="month" class="col-form-label">Mois : </label>
+                      </div>
+                      <div class="col-auto">
+                          <select id="month" name="month" class="form-select">
+                              <option value="1">Janvier</option>
+                              <option value="2">Février</option>
+                              <option value="3">Mars</option>
+                              <option value="4">Avril</option>
+                              <option value="5">Mai</option>
+                              <option value="6">Juin</option>
+                              <option value="7">Juilllet</option>
+                              <option value="8">Août</option>
+                              <option value="9">Septembre</option>
+                              <option value="10">Octobre</option>
+                              <option value="11">Novembre</option>
+                              <option value="12">Décembre</option>
+                          </select>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="col-lg-8 d-flex align-items-center mx-auto">
+                  <table class="table table-striped table-hover">
+                      <thead>
+                      <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">Prénom</th>
+                          <th scope="col">Nom</th>
+                          <th scope="col">Commission</th>
+                          <th scope="col">Commission encaissable</th>
+                      </tr>
+                      </thead>
+                      <tbody id="date-stats"></tbody>
+                  </table>
               </div>
 
           </div>

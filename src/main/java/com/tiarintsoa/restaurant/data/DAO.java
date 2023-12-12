@@ -52,17 +52,17 @@ public class DAO<T> {
                 PreparedStatement prepare = connect.prepareStatement(query);
                 ResultSet rs;
                 rs = prepare.executeQuery();
-                while(rs.next()) {
+                rs.next();
 
-                    ResultSetMetaData metaData = rs.getMetaData();
-                    int columnCount = metaData.getColumnCount();
+                ResultSetMetaData metaData = rs.getMetaData();
+                int columnCount = metaData.getColumnCount();
 
-                    fieldsName = new Vector<String>();
+                fieldsName = new Vector<String>();
 
-                    for (int i = 1; i <= columnCount; i++) {
-                        fieldsName.add(metaData.getColumnName(i));
-                    }
+                for (int i = 1; i <= columnCount; i++) {
+                    fieldsName.add(metaData.getColumnName(i));
                 }
+
                 rs.close();
                 prepare.close();
             } catch (Exception e) {

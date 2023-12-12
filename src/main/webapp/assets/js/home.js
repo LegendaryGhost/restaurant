@@ -1,5 +1,15 @@
 /****************  Functions ****************/
 
+const generate_tr = object => {
+    const tr = document.createElement('tr');
+    Object.keys(object).forEach(cle => {
+        const td = document.createElement('td');
+        td.textContent = object[cle];
+        tr.appendChild(td);
+    });
+    return tr;
+};
+
 /**
  * Creates a div element from a dish
  * @param dish
@@ -246,6 +256,49 @@ const show_statistics = () => {
     )
 };
 
+const show_years = () => {
+    const date = new Date();
+    const current_year = date.getFullYear();
+
+    for (let year = 2020; year <= current_year; year++) {
+        const option = document.createElement('option');
+        option.value = year;
+        option.textContent = year;
+        year_select.appendChild(option);
+    }
+};
+
+const show_year_month_stats = () => {
+    const year = year_select.value;
+    const month = month_select.value;
+    const form_data = new FormData();
+    form_data.append('year', year);
+    form_data.append('month', month);
+    sendXHRRequest('../suggester-stats-servlet', 'POST', form_data).then(
+        response => {
+            try {
+                date_stats_tbody.innerText = "";
+                const stats_array = JSON.parse(response);
+                for (const stats of stats_array) {
+                    date_stats_tbody.appendChild(generate_tr(stats));
+                }
+            } catch (e) {
+                console.log(response);
+                console.error(e);
+            }
+        }
+    );
+}
+
+const select_cur_date = () => {
+    const date = new Date();
+    const current_year = date.getFullYear();
+    const current_month = date.getMonth() + 1;
+
+    year_select.value = current_year;
+    month_select.value = current_month;
+};
+
 const send_command = () => {
     if (dishes_in_cart.length === 0) {
         alert("Impossible d'envoyer une commande vide");
@@ -296,7 +349,10 @@ let dishes_container,
     income_span,
     total_commission_span,
     expense_span,
-    net_income_span;
+    net_income_span,
+    year_select,
+    month_select,
+    date_stats_tbody;
 
 
 // Code to execute when the page is loaded
@@ -310,11 +366,23 @@ window.addEventListener('load', () => {
     total_commission_span = document.getElementById('total-commission');
     expense_span = document.getElementById('expense');
     net_income_span = document.getElementById('net-income');
+    year_select = document.getElementById('year');
+    month_select = document.getElementById('month');
+    date_stats_tbody = document.getElementById('date-stats');
 
     // Event listeners
     command_btn.addEventListener('click', send_command);
+    month_select.addEventListener('change', () => {
+        show_year_month_stats();
+    });
+    year_select.addEventListener('change', () => {
+        show_year_month_stats();
+    });
 
+    show_years();
+    select_cur_date();
     show_dishes();
     show_suggesters();
     show_statistics();
+    show_year_month_stats();
 });

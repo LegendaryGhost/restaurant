@@ -1,12 +1,8 @@
 package com.tiarintsoa.restaurant.data;
 
 import java.sql.Connection;
-import java.sql.SQLException;
 
-import com.tiarintsoa.restaurant.pojo.Client;
-import com.tiarintsoa.restaurant.pojo.Command;
-import com.tiarintsoa.restaurant.pojo.Contain;
-import com.tiarintsoa.restaurant.pojo.Dish;
+import com.tiarintsoa.restaurant.pojo.*;
 
 public class DAOFactory {
 
@@ -30,6 +26,10 @@ public class DAOFactory {
 
     public static StatisticsDAO getStatisticsDAO() {
         return new StatisticsDAO(mysql);
+    }
+
+    public static SuggesterStatsDAO getSuggesterStatsDAO() {
+        return new SuggesterStatsDAO(mysql);
     }
 
 }

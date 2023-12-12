@@ -9,40 +9,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="596dc744-dafa-4a74-8ac4-3bc0251a11b7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/query.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tiarintsoa/restaurant/controller/CommandServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tiarintsoa/restaurant/controller/ContainServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tiarintsoa/restaurant/controller/DishesServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tiarintsoa/restaurant/controller/LoginServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tiarintsoa/restaurant/controller/StatisticsServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tiarintsoa/restaurant/controller/SuggesterServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tiarintsoa/restaurant/data/ClientDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tiarintsoa/restaurant/data/DAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tiarintsoa/restaurant/data/DAOFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tiarintsoa/restaurant/data/DBConnection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tiarintsoa/restaurant/data/StatisticsDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tiarintsoa/restaurant/pojo/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tiarintsoa/restaurant/pojo/Command.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tiarintsoa/restaurant/pojo/Contain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tiarintsoa/restaurant/pojo/Dish.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tiarintsoa/restaurant/pojo/Statistics.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/login.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/xhr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/home.html" afterDir="false" />
+    <list default="true" id="596dc744-dafa-4a74-8ac4-3bc0251a11b7" name="Changes" comment="Buying system 2">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tiarintsoa/restaurant/controller/SuggesterStatsServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tiarintsoa/restaurant/data/SuggesterStatsDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tiarintsoa/restaurant/pojo/SuggesterStats.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/database.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/database.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/query.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/query.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tiarintsoa/restaurant/data/DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tiarintsoa/restaurant/data/DAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tiarintsoa/restaurant/data/DAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tiarintsoa/restaurant/data/DAOFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,34 +53,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/itu/Documents/S3/prog/restaurant/lib/gson-2.10.1.jar&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.43793103&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/itu/Documents/java_drivers/mysql-connector-java-8.0.11.jar",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.43793103",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect&quot;: [
-      &quot;MySQL&quot;
+  "keyToStringList": {
+    "com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect": [
+      "MySQL"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\itu\Documents\S3\prog\restaurant\src\main\webapp\WEB-INF" />
@@ -217,10 +196,42 @@
       <workItem from="1702311885087" duration="9927000" />
       <workItem from="1702356104540" duration="22356000" />
       <workItem from="1702393985383" duration="674000" />
+      <workItem from="1702398009542" duration="8182000" />
     </task>
+    <task id="LOCAL-00001" summary="Buying system">
+      <created>1702401318775</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1702401318775</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Buying system 2">
+      <created>1702401591142</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1702401591142</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Buying system" />
+    <MESSAGE value="Buying system 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Buying system 2" />
   </component>
 </project>
