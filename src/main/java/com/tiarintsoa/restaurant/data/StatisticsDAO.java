@@ -17,17 +17,32 @@ public class StatisticsDAO {
     }
 
     public Statistics total() {
+        return totalPerYearMonth(0, 0);
+    }
+
+    public Statistics totalPerYearMonth(int year, int month) {
         Statistics obj = new Statistics();
-        String query = "SELECT sum(contain.quantity * contain.price) AS income,\n" +
-                "       sum(contain.quantity * contain.commission) AS total_commission,\n" +
-                "       sum(contain.quantity * contain.product_price) AS expense\n" +
-                "FROM command\n" +
-                "    INNER JOIN contain\n" +
-                "        ON command.id = contain.id_command;";
+        String query = """
+                SELECT sum(contain.quantity * contain.price) AS income,
+                       sum(contain.quantity * contain.commission) AS total_commission,
+                       sum(contain.quantity * contain.product_price) AS expense
+                FROM command
+                    INNER JOIN contain
+                        ON command.id = contain.id_command""";
+
+        if (year != 0 && month != 0) {
+            query += " WHERE YEAR(command.date_time) = ? AND\n" +
+                    "    MONTH(command.date_time) = ?";
+        }
+
         try {
             PreparedStatement prepare = connect.prepareStatement(query);
-            ResultSet rs;
-            rs = prepare.executeQuery();
+            if (year != 0 && month != 0) {
+                prepare.setInt(1, year);
+                prepare.setInt(2, month);
+            }
+            ResultSet rs = prepare.executeQuery();
+
             while(rs.next()) {
 
                 ResultSetMetaData metaData = rs.getMetaData();
@@ -53,6 +68,7 @@ public class StatisticsDAO {
                 prepare.close();
                 return obj;
             }
+
             rs.close();
             prepare.close();
         } catch (Exception e) {
@@ -60,5 +76,4 @@ public class StatisticsDAO {
         }
         return obj;
     }
-
 }

@@ -253,7 +253,7 @@ const show_statistics = () => {
                 console.error(e);
             }
         }
-    )
+    );
 };
 
 const show_years = () => {
@@ -282,6 +282,26 @@ const show_year_month_stats = () => {
                 for (const stats of stats_array) {
                     date_stats_tbody.appendChild(generate_tr(stats));
                 }
+            } catch (e) {
+                console.log(response);
+                console.error(e);
+            }
+        }
+    );
+
+    sendXHRRequest('../date-statistics-servlet', 'POST', form_data).then(
+        response => {
+            try {
+                const stats = JSON.parse(response);
+                if (Object.keys(stats).length === 0) {
+                    stats.income = 0;
+                    stats.total_commission = 0;
+                    stats.expense = 0;
+                }
+                date_income_span.textContent = stats.income.toString();
+                date_total_commission_span.textContent = stats.total_commission.toString();
+                date_expense_span.textContent = stats.expense.toString();
+                date_net_income_span.textContent = (stats.income - stats.expense - stats.total_commission).toString();
             } catch (e) {
                 console.log(response);
                 console.error(e);
@@ -350,6 +370,10 @@ let dishes_container,
     total_commission_span,
     expense_span,
     net_income_span,
+    date_income_span,
+    date_total_commission_span,
+    date_expense_span,
+    date_net_income_span,
     year_select,
     month_select,
     date_stats_tbody;
@@ -366,6 +390,10 @@ window.addEventListener('load', () => {
     total_commission_span = document.getElementById('total-commission');
     expense_span = document.getElementById('expense');
     net_income_span = document.getElementById('net-income');
+    date_income_span = document.getElementById('date-income');
+    date_total_commission_span = document.getElementById('date-total-commission');
+    date_expense_span = document.getElementById('date-expense');
+    date_net_income_span = document.getElementById('date-net-income');
     year_select = document.getElementById('year');
     month_select = document.getElementById('month');
     date_stats_tbody = document.getElementById('date-stats');
