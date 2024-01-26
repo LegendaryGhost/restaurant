@@ -9,12 +9,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="596dc744-dafa-4a74-8ac4-3bc0251a11b7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tiarintsoa/restaurant/controller/DateStatisticsServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+    <list default="true" id="596dc744-dafa-4a74-8ac4-3bc0251a11b7" name="Changes" comment="Warning removed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tiarintsoa/restaurant/data/StatisticsDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tiarintsoa/restaurant/data/StatisticsDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/query.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/query.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tiarintsoa/restaurant/controller/CommandServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tiarintsoa/restaurant/controller/CommandServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tiarintsoa/restaurant/controller/SuggesterStatsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tiarintsoa/restaurant/controller/SuggesterStatsServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tiarintsoa/restaurant/data/DBConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tiarintsoa/restaurant/data/DBConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tiarintsoa/restaurant/data/SuggesterStatsDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tiarintsoa/restaurant/data/SuggesterStatsDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tiarintsoa/restaurant/pojo/SuggesterStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tiarintsoa/restaurant/pojo/SuggesterStats.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,6 +67,7 @@
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.43793103&quot;,
@@ -195,7 +200,13 @@
       <workItem from="1702356104540" duration="22356000" />
       <workItem from="1702393985383" duration="674000" />
       <workItem from="1702398009542" duration="9368000" />
-      <workItem from="1702443111417" duration="5996000" />
+      <workItem from="1702443111417" duration="14094000" />
+      <workItem from="1702548178874" duration="84000" />
+      <workItem from="1702624089824" duration="648000" />
+      <workItem from="1702705073895" duration="91000" />
+      <workItem from="1702707430603" duration="131000" />
+      <workItem from="1704366747821" duration="79000" />
+      <workItem from="1706278992501" duration="979000" />
     </task>
     <task id="LOCAL-00001" summary="Buying system">
       <created>1702401318775</created>
@@ -218,7 +229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1702409218067</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="General statistics per year and month">
+      <created>1702449624805</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1702449624805</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,6 +257,9 @@
     <MESSAGE value="Buying system" />
     <MESSAGE value="Buying system 2" />
     <MESSAGE value="Suggesters statistics per year and month" />
-    <option name="LAST_COMMIT_MESSAGE" value="Suggesters statistics per year and month" />
+    <MESSAGE value="General statistics per year and month" />
+    <MESSAGE value="Warning removed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Warning removed" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

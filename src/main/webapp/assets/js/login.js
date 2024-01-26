@@ -4,7 +4,7 @@ const send_login_form = event => {
 
     const formData = new FormData(event.target);
 
-    sendXHRRequest("login-servlet", "POST", formData).then(
+     sendXHRRequest("login-servlet", "POST", formData).then(
         response => {
             try {
                 response = JSON.parse(response);

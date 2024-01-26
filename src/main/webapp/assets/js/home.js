@@ -280,7 +280,20 @@ const show_year_month_stats = () => {
                 date_stats_tbody.innerText = "";
                 const stats_array = JSON.parse(response);
                 for (const stats of stats_array) {
-                    date_stats_tbody.appendChild(generate_tr(stats));
+                    let new_stats = {};
+                    if (! ("firstname" in stats) || ! ("lastname" in stats)) {
+                        new_stats["cumulative_income"] = stats["cumulative_income"];
+                        new_stats["cumulative_commission"] = stats["cumulative_income"];
+                        new_stats["id"] = 0;
+                        new_stats["firstname"] = "Aucun";
+                        new_stats["lastname"] = "Intermédiaire";
+                        new_stats["restau_income"] = stats["restau_income"];
+                        new_stats["total_commission"] = stats["total_commission"];
+                        new_stats["valable_commission"] = stats["valable_commission"];
+                    } else {
+                        new_stats = stats;
+                    }
+                    date_stats_tbody.appendChild(generate_tr(new_stats));
                 }
             } catch (e) {
                 console.log(response);

@@ -24,23 +24,65 @@ public class SuggesterStatsDAO {
 
         // faire une requête select
         String sql = """
-                SELECT suggester.id AS id_suggester,
+                SELECT
+                    COALESCE(
+                            (
+                                SELECT
+                                    COALESCE(
+                                            SUM(COALESCE(ct.price, 0) * COALESCE(ct.quantity, 0)),
+                                            0
+                                        )
+                                FROM
+                                    command AS c
+                                        LEFT JOIN contain AS ct
+                                                  ON c.id = ct.id_command
+                                WHERE
+                                        c.id_suggester = suggester.id
+                                  AND YEAR(c.date_time) = ?
+                                  AND MONTH(c.date_time) < MONTH(command.date_time)
+                                GROUP BY
+                                    c.id_suggester  -- Ajout du GROUP BY pour agréger par suggester
+                            ),
+                            0
+                        ) AS cumulative_income,
+                    COALESCE(
+                            (
+                                SELECT
+                                    COALESCE(
+                                            SUM(COALESCE(ct.commission, 0) * COALESCE(ct.quantity, 0)),
+                                            0
+                                        )
+                                FROM command AS c
+                                         LEFT JOIN contain AS ct
+                                                   ON c.id = ct.id_command
+                                WHERE c.id_suggester = suggester.id
+                                  AND YEAR(c.date_time) = ?
+                                  AND MONTH(c.date_time) < MONTH(command.date_time)
+                                GROUP BY
+                                    c.id_suggester  -- Ajout du GROUP BY pour agréger par suggester
+                            ),
+                            0
+                        ) AS cumulative_commission,
+                    suggester.id AS id_suggester,
                     suggester.firstname AS firstname,
                     suggester.lastname AS lastname,
+                    SUM(contain.price * contain.quantity) AS restau_income,
                     SUM(contain.commission * contain.quantity) AS total_commission
                 FROM command
-                    INNER JOIN contain
-                        ON command.id = contain.id_command
-                    INNER JOIN client AS suggester
-                        ON command.id_suggester = suggester.id
+                         LEFT JOIN contain
+                                    ON command.id = contain.id_command
+                         LEFT JOIN client AS suggester
+                                   ON command.id_suggester = suggester.id
                 WHERE YEAR(command.date_time) = ? AND
-                    MONTH(command.date_time) = ?
+                        MONTH(command.date_time) = ?
                 GROUP BY suggester.id, suggester.lastname, suggester.firstname;""";
 
         try {
             PreparedStatement prepare = connect.prepareStatement(sql);
             prepare.setInt(1, year);
-            prepare.setInt(2, month);
+            prepare.setInt(2, year);
+            prepare.setInt(3, year);
+            prepare.setInt(4, month);
             ResultSet rs = prepare.executeQuery();
 
             // boucler sur chaque ligne
@@ -54,6 +96,7 @@ public class SuggesterStatsDAO {
 
                 for (int i = 1; i <= columnCount; i++) {
                     String columnName = metaData.getColumnLabel(i);
+                    System.out.println(columnCount);
                     Object columnValue = rs.getObject(i);
 
                     Field field = obj.getClass().getDeclaredField(columnName);
@@ -62,7 +105,10 @@ public class SuggesterStatsDAO {
                     field.setAccessible(true);
 
                     // Assigne la valeur du ResultSet au champ de l'objet obj
-                    field.set(obj, columnValue);
+                    if (columnValue != null) {
+                        field.set(obj, columnValue);
+                    }
+
                     field.setAccessible(false);
                 }
 
